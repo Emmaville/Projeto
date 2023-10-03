@@ -7,23 +7,42 @@ import ContactUs from "./pages/Contact Us";
 import Service from "./pages/Service";
 import ImageDetail from './pages/ImageDetail';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+{/*import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link
+} from 'react-router-dom';*/}
 import './App.css';
 
 function App() {
   return (
     <div>
-      <BrowserRouter>
-        <Header />
+      <Router>
+      <Header>
+          {/*<div className="container">
+              <nav>
+                <ul>
+                  {/* Aqui e o navegador, simplesmente adicionem o nome simples do componente,
+                  por exemplo Link to="Contato" ou Link to="Salas" etc
+                  <li><Link to="Home">Home</Link></li>
+                  <li><Link to="About-Us">About us</Link></li>
+                  <li><Link to="Contact-Us">Contact us</Link></li>
+                  <li><Link to="Service">Service</Link></li>
+                </ul>
+              </nav>
+          </div>*/}
+        </Header>
         <Routes>
-          <Route path="/Home" element={<Home />} />
-          <Route path="/About-Us" element={<AboutUs />} />
-          <Route path="/Contact-Us" element={<ContactUs />} />
-          <Route path="/Service" element={<Service />} />
-          <Route path="/image-detail/:id" element={<ImageDetail />} />
+          <Route path="Home" element={<Home />} />
+          <Route path="About-Us" element={<AboutUs />} />
+          <Route path="Contact-Us" element={<ContactUs />} />
+          <Route path="Service" element={<Service />} />
+          <Route path="image-detail" element={<ImageDetail />} />
           {/* Add more routes as needed */}
         </Routes>
         <Footer />
-      </BrowserRouter>
+      </Router>
     </div>
   );
 }
